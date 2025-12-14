@@ -14,11 +14,19 @@ export interface PostMeta {
 }
 
 export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'blog'): Promise<{ meta: PostMeta; content: any } | null> {
+  if (!slug) {
+    console.error("getPostBySlug called with undefined slug!");
+    return null;
+  }
+  
   const realSlug = slug.replace(/\.mdx$/, '');
   const dir = type === 'blog' ? 'content/public/blog' : 'content/private/docs';
   const filePath = path.join(rootDir, dir, `${realSlug}.mdx`);
   
+  console.log(`[MDX] Processing: ${realSlug} (${filePath})`);
+
   if (!fs.existsSync(filePath)) {
+    console.warn(`[MDX] File not found: ${filePath}`);
     return null;
   }
 
