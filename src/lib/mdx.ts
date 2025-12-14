@@ -34,7 +34,19 @@ export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'b
       source: fileContent,
       options: { parseFrontmatter: true },
     });
-    return { meta: { ...frontmatter, slug: realSlug } as PostMeta, content };
+    
+    // Provide defaults for missing fields to prevent crashes
+    const safeMeta: PostMeta = {
+      title: frontmatter.title || realSlug,
+      date: frontmatter.date || new Date().toISOString(), 
+      description: frontmatter.description || '',
+      authors: frontmatter.authors || [],
+      tags: frontmatter.tags || [],
+      slug: realSlug,
+      ...frontmatter,
+    };
+
+    return { meta: safeMeta, content };
   } catch (err) {
     console.error(`Error compiling MDX for ${realSlug}:`, err);
     return null;
