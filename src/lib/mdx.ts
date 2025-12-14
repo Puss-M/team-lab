@@ -4,7 +4,16 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 
 const rootDir = process.cwd();
 
-export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'blog') {
+export interface PostMeta {
+  title: string;
+  date: string;
+  description?: string;
+  authors?: string[];
+  tags?: string[];
+  slug: string;
+}
+
+export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'blog'): Promise<{ meta: PostMeta; content: any } | null> {
   const realSlug = slug.replace(/\.mdx$/, '');
   const dir = type === 'blog' ? 'content/public/blog' : 'content/private/docs';
   const filePath = path.join(rootDir, dir, `${realSlug}.mdx`);
@@ -15,12 +24,21 @@ export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'b
 
   const fileContent = fs.readFileSync(filePath, 'utf8');
 
-  const { frontmatter, content } = await compileMDX({
-    source: fileContent,
-    options: { parseFrontmatter: true },
-  });
+  if (!fileContent || fileContent.trim() === '') {
+    console.warn(`Empty file found: ${filePath}`);
+    return null;
+  }
 
-  return { meta: { ...frontmatter, slug: realSlug }, content };
+  try {
+    const { frontmatter, content } = await compileMDX<Omit<PostMeta, 'slug'>>({
+      source: fileContent,
+      options: { parseFrontmatter: true },
+    });
+    return { meta: { ...frontmatter, slug: realSlug } as PostMeta, content };
+  } catch (err) {
+    console.error(`Error compiling MDX for ${realSlug}:`, err);
+    return null;
+  }
 }
 
 export async function getAllPosts(type: 'blog' | 'internal' = 'blog') {
@@ -40,8 +58,11 @@ export async function getAllPosts(type: 'blog' | 'internal' = 'blog') {
       })
   );
 
+  // Filter out undefined/null posts
+  const validPosts = posts.filter((post): post is PostMeta => post !== undefined && post !== null);
+
   // Sort by date descending
-  return posts.sort((a: any, b: any) => 
+  return validPosts.sort((a, b) => 
     new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
   );
 }
