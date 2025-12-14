@@ -17,9 +17,18 @@ slorber:
   image_url: https://github.com/slorber.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+    permalink: "/all-sebastien-lorber-articles"
   socials:
     x: sebastienlorber
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+alex:
+  name: Alex Chen
+  title: Club Founder
+  url: https://github.com/alex
+  image_url: https://github.com/facebook.png
+  page: true
+  socials:
+    github: alex
