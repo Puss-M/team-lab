@@ -43,7 +43,6 @@ export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'b
       authors: frontmatter.authors || [],
       tags: frontmatter.tags || [],
       slug: realSlug,
-      ...frontmatter,
     };
 
     return { meta: safeMeta, content };
