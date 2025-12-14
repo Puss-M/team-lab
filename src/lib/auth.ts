@@ -1,14 +1,13 @@
-import { NextAuthOptions } from "next-auth";
-import GithubProvider from "next-auth/providers/github";
+import NextAuth from "next-auth";
+import Github from "next-auth/providers/github";
 
-export const authOptions: NextAuthOptions = {
+export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_ID || "",
-      clientSecret: process.env.GITHUB_SECRET || "",
+    Github({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
       authorization: {
         params: {
-          // Request read:org scope to check membership
           scope: "read:user read:org",
         },
       },
@@ -17,7 +16,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user, account, profile }) {
       if (process.env.NODE_ENV === "development" && process.env.SKIP_ORG_CHECK === "true") {
-        return true; // Bypass in dev if needed
+        return true;
       }
 
       if (account?.provider === "github") {
@@ -42,8 +41,6 @@ export const authOptions: NextAuthOptions = {
 
           if (!isMember) {
             console.log(`User ${user.email} is not a member of ${targetOrg}`);
-            // Optionally redirect to a specific error page
-            // return "/unauthorized"; 
             return false;
           }
 
@@ -55,15 +52,10 @@ export const authOptions: NextAuthOptions = {
       }
       return true;
     },
-    async session({ session, token }) {
-        // Pass access token to client if needed (usually not recommended for security, but okay for internal tools)
-        // session.accessToken = token.accessToken;
-        return session;
-    }
   },
   pages: {
-    signIn: "/auth/signin", // Custom sign in page (we'll make one or use default for now)
+    signIn: "/auth/signin",
     error: "/auth/error",
   },
   secret: process.env.NEXTAUTH_SECRET,
-};
+});
