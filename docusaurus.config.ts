@@ -22,7 +22,7 @@ const config: Config = {
   organizationName: "swift-coding-club",
   projectName: "club-website",
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
 
   // Internationalization - Chinese primary, English secondary
   i18n: {

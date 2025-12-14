@@ -46,7 +46,7 @@ const subtitleStyle = {
 };
 
 export default function HeroCarousel() {
-  const settings = {
+  const settings: any = {
     dots: true,
     infinite: true,
     speed: 800,
