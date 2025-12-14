@@ -1,8 +1,15 @@
-import { getPostBySlug } from '@/lib/mdx';
+import { getPostBySlug, getAllPosts } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Lock } from 'lucide-react';
 import AuthGuard from '@/components/auth/AuthGuard';
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts('internal');
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default async function InternalDocPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug, 'internal');

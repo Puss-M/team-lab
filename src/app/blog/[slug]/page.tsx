@@ -1,7 +1,14 @@
-import { getPostBySlug } from '@/lib/mdx';
+import { getPostBySlug, getAllPosts } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts('blog');
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
