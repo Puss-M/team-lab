@@ -5,8 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "实验室名称", // TODO: Replace with your lab name
-  tagline: "探索未知，创造未来", // TODO: Replace with your lab tagline
+  title: "Swift Coding Club",
+  tagline: "Igniting Ideas, Fostering Collaboration",
   favicon: "img/favicon.ico",
 
   // Future flags
@@ -15,12 +15,12 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://lab.university.edu", // TODO: Replace with your domain
+  url: "https://swift-coding-club.com", 
   baseUrl: "/",
 
   // GitHub pages deployment config
-  organizationName: "your-org", // TODO: Replace with your GitHub org
-  projectName: "lab-website",
+  organizationName: "swift-coding-club",
+  projectName: "club-website",
 
   onBrokenLinks: "throw",
 
@@ -48,8 +48,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
@@ -59,11 +57,8 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
@@ -82,67 +77,63 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "实验室",
+      title: "Swift Coding Club",
       logo: {
-        alt: "Lab Logo",
-        src: "img/logo.svg",
+        alt: "Spark Lab Logo",
+        src: "img/spark-logo.jpg",
       },
       items: [
-        // 成果 (Achievements) - Dropdown
+        // Projects (was Achievements)
         {
-          label: "成果",
+          label: "项目", // Projects
           position: "left",
           items: [
             {
-              label: "论文发表",
-              to: "/achievements/papers",
+              label: "精选项目",
+              to: "/projects/featured", // Need to ensure routes exist or redirect
             },
             {
-              label: "项目演示",
-              to: "/achievements/demos",
-            },
-            {
-              label: "获奖情况",
-              to: "/achievements/awards",
+              label: "黑客松",
+              to: "/projects/hackathons",
             },
           ],
         },
-        // 资源 (Resources)
+        // Resources
         {
           label: "资源",
           to: "/resources",
           position: "left",
         },
-        // 快学 (Quick Learn) - Links to Docs
+        // Quick Learn (Docs)
         {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "快学",
         },
-        // 博客 (Blog)
+        // Blog
         {
           to: "/blog",
           label: "博客",
           position: "left",
         },
-        // 归档 (Archives)
+        // Archives
         {
           label: "归档",
           to: "/archives",
           position: "left",
         },
-        // 关于 (About) - Dropdown
+        // About
         {
           label: "关于",
           position: "left",
           items: [
             {
-              label: "实验室介绍",
+              label: "社团介绍",
               to: "/about",
             },
             {
-              label: "团队成员",
+              label: "成员列表",
               to: "/about/team",
             },
             {
@@ -158,7 +149,7 @@ const config: Config = {
         },
         // GitHub link
         {
-          href: "https://github.com/your-org/lab-website",  // TODO: Update
+          href: "https://github.com/your-org/club-website",
           label: "GitHub",
           position: "right",
         },
@@ -168,58 +159,57 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "快速导航",
+          title: "社团导航",
           items: [
             {
-              label: "快学教程",
+              label: "新手入门",
               to: "/docs/intro",
             },
             {
-              label: "团队博客",
+              label: "技术博客",
               to: "/blog",
             },
             {
-              label: "资源下载",
-              to: "/resources",
+              label: "历史归档",
+              to: "/archives",
             },
           ],
         },
         {
-          title: "成果展示",
+          title: "精彩活动",
           items: [
             {
-              label: "论文发表",
-              to: "/achievements/papers",
+              label: "每周分享",
+              to: "/blog/tags/sharing",
             },
             {
-              label: "项目演示",
-              to: "/achievements/demos",
-            },
-            {
-              label: "获奖情况",
-              to: "/achievements/awards",
+              label: "项目展示",
+              to: "/projects/featured",
             },
           ],
         },
         {
-          title: "关于我们",
+          title: "联系我们",
           items: [
             {
-              label: "实验室介绍",
+              label: "关于我们",
               to: "/about",
             },
             {
-              label: "团队成员",
-              to: "/about/team",
+              label: "加入我们",
+              to: "/about/contact",
             },
             {
-              label: "联系我们",
-              to: "/about/contact",
+              html: `
+                <div class="footer__link-item">
+                  <span>微信公众号: SwiftCodingClub</span>
+                </div>
+              `,
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 实验室名称. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Swift Coding Club. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

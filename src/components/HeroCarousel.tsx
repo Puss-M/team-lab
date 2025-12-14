@@ -61,24 +61,24 @@ export default function HeroCarousel() {
   const slides = [
     {
       image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      title: 'XXX Research Group',
-      subtitle: 'Pioneering Research in Artificial Intelligence and Computational Science',
-      buttonText: 'Explore Research',
-      buttonLink: '/achievements/papers',
+      title: 'Swift Coding Club',
+      subtitle: 'Igniting Ideas, Fostering Collaboration. 用 AI 重塑金融。',
+      buttonText: '探索项目',
+      buttonLink: '/projects/featured',
     },
     {
       image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      title: 'Join Our Team',
-      subtitle: 'We are looking for passionate PhD students and Postdocs to join us.',
-      buttonText: 'View Openings',
-      buttonLink: '/about/contact',
+      title: '加入我们',
+      subtitle: '每周五晚 7 点，思维碰撞，共创未来。',
+      buttonText: '查看活动',
+      buttonLink: '/blog',
     },
     {
       image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      title: 'Latest Breakthrough',
-      subtitle: 'Our new paper on Large Language Models accepted at CVPR 2025.',
-      buttonText: 'Read Paper',
-      buttonLink: '/achievements/papers',
+      title: 'DeepSeek 深度解析',
+      subtitle: '本周分享：DeepSeek-V3 架构拆解与本地部署实战。',
+      buttonText: '阅读回顾',
+      buttonLink: '/blog/deepseek-review',
     },
   ];
 

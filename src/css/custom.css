@@ -4,7 +4,7 @@
  */
 
 /* Import Google Fonts - Inter for modern academic feel */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* Design Tokens - Reference Site Inspired (Deep Teal/Navy) */
 :root {
@@ -18,7 +18,8 @@
   --ifm-color-primary-lightest: #4196af;
 
   /* Typography */
-  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", sans-serif;
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.7;
   --ifm-heading-font-weight: 600;
@@ -33,7 +34,7 @@
 
   /* Navbar adjustments - Solid color matching the brand */
   --ifm-navbar-background-color: var(--ifm-color-primary);
-  --ifm-navbar-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --ifm-navbar-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
   --ifm-navbar-link-hover-color: #ffffff;
 
@@ -47,12 +48,12 @@
   --ifm-background-color: #ffffff;
   --ifm-color-content: #1f2937;
   --ifm-color-content-secondary: #4b5563;
-  
+
   /* Borders & Shadows - Subtle and minimal */
   --ifm-global-border-width: 1px;
   --ifm-global-radius: 0.5rem;
   --ifm-hover-overlay: rgba(0, 0, 0, 0.05);
-  
+
   /* Link colors */
   --ifm-link-color: #267e91; /* Accent teal for links */
   --ifm-link-hover-color: #1a4855;
@@ -60,7 +61,7 @@
 }
 
 /* Dark Mode adaptation */
-[data-theme='dark'] {
+[data-theme="dark"] {
   /* Primary Color - Lighter teal/cyan for dark backgrounds */
   --ifm-color-primary: #22d3ee;
   --ifm-color-primary-dark: #06b6d4;
@@ -99,37 +100,55 @@
   margin: 0 0.5rem;
 }
 
-.navbar__item:hover, .navbar__item--active {
+.navbar__item:hover,
+.navbar__item--active {
   color: #fff !important;
   text-decoration: none;
 }
 
 /* Standard typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--ifm-heading-font-weight);
   letter-spacing: -0.02em;
   color: var(--ifm-color-primary); /* Headings in brand color */
 }
 
-h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1rem; }
-h3 { font-size: 1.5rem; margin-top: 2rem; }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
 
-[data-theme='dark'] h1, [data-theme='dark'] h2, [data-theme='dark'] h3 {
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
   color: var(--ifm-color-content);
 }
 
 /* Card Styling */
 .card {
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0; /* Boxy look like reference */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styling */
@@ -182,14 +201,14 @@ html {
 .lab-life-section {
   padding: 5rem 0;
   background-color: var(--ifm-background-surface-color);
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .lab-life-image {
   border-radius: var(--ifm-global-radius);
   transition: transform 0.3s ease;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 250px;
 }
 
@@ -202,4 +221,36 @@ html {
 
 .lab-life-image:hover img {
   transform: scale(1.05);
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 768px) {
+  :root {
+    --ifm-spacing-horizontal: 1rem;
+    --ifm-spacing-vertical: 1rem;
+    --ifm-navbar-padding-horizontal: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .lab-life-section {
+    padding: 3rem 0;
+  }
+
+  .lab-life-image {
+    height: 200px;
+    margin-bottom: 0.5rem;
+  }
 }

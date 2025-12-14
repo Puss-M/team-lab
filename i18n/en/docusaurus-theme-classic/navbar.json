@@ -1,0 +1,82 @@
+{
+  "title": {
+    "message": "实验室",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Lab Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.成果": {
+    "message": "成果",
+    "description": "Navbar item with label 成果"
+  },
+  "item.label.资源": {
+    "message": "资源",
+    "description": "Navbar item with label 资源"
+  },
+  "item.label.快学": {
+    "message": "快学",
+    "description": "Navbar item with label 快学"
+  },
+  "item.label.博客": {
+    "message": "博客",
+    "description": "Navbar item with label 博客"
+  },
+  "item.label.归档": {
+    "message": "归档",
+    "description": "Navbar item with label 归档"
+  },
+  "item.label.关于": {
+    "message": "关于",
+    "description": "Navbar item with label 关于"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.论文发表": {
+    "message": "论文发表",
+    "description": "Navbar item with label 论文发表"
+  },
+  "item.label.项目演示": {
+    "message": "项目演示",
+    "description": "Navbar item with label 项目演示"
+  },
+  "item.label.获奖情况": {
+    "message": "获奖情况",
+    "description": "Navbar item with label 获奖情况"
+  },
+  "item.label.实验室介绍": {
+    "message": "实验室介绍",
+    "description": "Navbar item with label 实验室介绍"
+  },
+  "item.label.团队成员": {
+    "message": "团队成员",
+    "description": "Navbar item with label 团队成员"
+  },
+  "item.label.联系我们": {
+    "message": "联系我们",
+    "description": "Navbar item with label 联系我们"
+  },
+  "item.label.项目": {
+    "message": "项目",
+    "description": "Navbar item with label 项目"
+  },
+  "item.label.精选项目": {
+    "message": "精选项目",
+    "description": "Navbar item with label 精选项目"
+  },
+  "item.label.黑客松": {
+    "message": "黑客松",
+    "description": "Navbar item with label 黑客松"
+  },
+  "item.label.社团介绍": {
+    "message": "社团介绍",
+    "description": "Navbar item with label 社团介绍"
+  },
+  "item.label.成员列表": {
+    "message": "成员列表",
+    "description": "Navbar item with label 成员列表"
+  }
+}

@@ -88,29 +88,3 @@
     font-size: 1.25rem;
   }
 }
-
-@media screen and (max-width: 576px) {
-  .heroBanner {
-    padding: 4rem 1rem;
-    background-attachment: scroll; /* Disable parallax on mobile for performance */
-  }
-
-  .hero__title {
-    font-size: 2rem;
-  }
-
-  .hero__subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .buttons {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .buttons .button {
-    width: 100%;
-  }
-}

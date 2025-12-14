@@ -37,22 +37,22 @@ const ShieldIcon = () => (
 
 const areas = [
   {
-    title: 'Artificial Intelligence',
-    description: 'Developing next-generation foundation models and interpretable AI for scientific discovery.',
-    icon: <BrainIcon />,
-    link: '/research/ai',
+    title: '金融科技 (FinTech)',
+    description: '探索量化交易策略、风险控制与智能投顾的前沿应用。',
+    icon: <BrainIcon />, // Consider changing icon later if needed
+    link: '/projects/fintech',
   },
   {
-    title: 'Computational Science',
-    description: 'Simulating complex molecular dynamics and biological systems at unprecedented scales.',
+    title: '大模型应用 (LLM Apps)',
+    description: '基于 RAG 与 Agent 技术，构建下一代智能金融助手。',
     icon: <MoleculeIcon />,
-    link: '/research/comp-sci',
+    link: '/projects/llm',
   },
   {
-    title: 'System Security',
-    description: 'Ensuring robustness and privacy in distributed computing and federated learning systems.',
+    title: '前沿探索 (Frontier)',
+    description: '关注 AI for Science、区块链与其他新兴技术领域。',
     icon: <ShieldIcon />,
-    link: '/research/security',
+    link: '/projects/frontier',
   },
 ];
 
@@ -60,7 +60,7 @@ export default function ResearchAreaIcons() {
   return (
     <div className="container" style={{padding: '4rem 0'}}>
       <Heading as="h2" style={{textAlign: 'center', marginBottom: '3rem', fontSize: '2rem'}}>
-        Research Frontiers
+        科研前沿
       </Heading>
       <div className="row">
         {areas.map((area, idx) => (
