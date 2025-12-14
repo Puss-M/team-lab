@@ -133,8 +133,12 @@ export default function About() {
               <Link to="/about/contact" className="button button--secondary">
                 📧 联系我们
               </Link>
-              <Link to="/achievements/papers" className="button button--secondary">
-                📚 查看研究成果
+            </div>
+            <div className="text--center" style={{marginTop: '1.5rem'}}>
+              <Link
+                className="button button--primary button--lg"
+                to="/projects/featured">
+                查看我们的项目 &rarr;
               </Link>
             </div>
           </div>

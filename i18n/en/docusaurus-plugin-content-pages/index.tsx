@@ -6,8 +6,8 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
-import HeroCarousel from '../components/HeroCarousel';
-import ResearchAreaIcons from '../components/ResearchAreaIcons';
+import HeroCarousel from '@site/src/components/HeroCarousel';
+import ResearchAreaIcons from '@site/src/components/ResearchAreaIcons';
 
 // Latest News & Highlights (Guzj Lab Style - Structured Grid)
 function ResearchHighlights() {
@@ -115,7 +115,7 @@ function LabLife() {
   );
 }
 
-import AlumniMap from '../components/AlumniMap';
+import AlumniMap from "@site/src/components/AlumniMap";
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
