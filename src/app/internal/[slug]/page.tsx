@@ -6,12 +6,7 @@ import AuthGuard from '@/components/auth/AuthGuard';
 
 export const runtime = 'edge';
 
-export async function generateStaticParams() {
-  const posts = await getAllPosts('internal');
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+// generateStaticParams removed to allow dynamic SSR on Edge
 
 interface PageProps {
   params: Promise<{

@@ -5,8 +5,7 @@ import { notFound } from 'next/navigation'
 
 export const runtime = 'edge';
 
-export const generateStaticParams = async () =>
-  allBlogs.map((post) => ({ slug: post.slug.split('/') }))
+// generateStaticParams removed to allow dynamic SSR on Edge
 
 export const generateMetadata = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
   const { slug: slugArray } = await params
