@@ -10,6 +10,7 @@
     "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.4.0",
     "@octokit/rest": "^22.0.1",
     "clsx": "^2.1.1",
     "contentlayer2": "^0.5.8",

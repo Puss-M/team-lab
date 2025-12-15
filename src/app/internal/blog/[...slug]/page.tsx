@@ -6,8 +6,9 @@ import { notFound } from 'next/navigation'
 export const generateStaticParams = async () =>
   allBlogs.map((post) => ({ slug: post.slug.split('/') }))
 
-export const generateMetadata = async ({ params }: { params: { slug: string[] } }) => {
-  const slug = params.slug.join('/')
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
+  const { slug: slugArray } = await params
+  const slug = slugArray.join('/')
   const post = allBlogs.find((p) => p.slug === slug)
   if (!post) {
       return
@@ -15,8 +16,9 @@ export const generateMetadata = async ({ params }: { params: { slug: string[] } 
   return { title: post.title }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string[] } }) {
-  const slug = params.slug.join('/')
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string[] }> }) {
+  const { slug: slugArray } = await params
+  const slug = slugArray.join('/')
   const post = allBlogs.find((p) => p.slug === slug)
 
   if (!post) {
