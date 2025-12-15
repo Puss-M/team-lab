@@ -11,8 +11,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function InternalDocPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug, 'internal');
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function InternalPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug, 'internal');
 
   if (!post) {
     notFound();
