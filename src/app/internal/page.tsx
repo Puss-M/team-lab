@@ -1,49 +1,71 @@
-import AuthGuard from "@/components/auth/AuthGuard";
-import { getAllPosts } from "@/lib/mdx";
+import { allBlogs } from "contentlayer/generated";
+import { compareDesc, format, parseISO } from "date-fns";
 import Link from "next/link";
-import { FileText, Lock } from "lucide-react";
+import { Key } from "lucide-react"; // Import icon if needed, but keeping it simple for now
 
-export default async function InternalPage() {
-  const docs = await getAllPosts('internal');
+export const metadata = {
+  title: "Internal Dashboard | Swift Coding Club",
+};
+
+export default function InternalDashboard() {
+  const posts = allBlogs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
-    <AuthGuard>
-      <div className="min-h-screen pt-24 pb-12 px-4 container mx-auto">
-        <div className="flex items-center gap-4 mb-8">
-           <div className="p-3 bg-secondary/10 rounded-full">
-             <Lock className="w-6 h-6 text-secondary" />
-           </div>
-           <div>
-             <h1 className="text-4xl font-bold text-white">Internal Knowledge Base</h1>
-             <p className="text-muted-foreground">Classified resources for verified members.</p>
-           </div>
-        </div>
+    <div className="max-w-4xl mx-auto">
+      <header className="mb-10">
+        <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          Internal Knowledge Base
+        </h1>
+        <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+          Private reports, meeting notes, and auto-published updates from BettaFish.
+        </p>
+      </header>
+      
+      <div className="grid gap-6">
+        {posts.map((post) => (
+          <article
+            key={post._id}
+            className="group relative flex flex-col space-y-2 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 bg-transparent transition-all"
+          >
+            <div className="flex items-center justify-between">
+                <time dateTime={post.date} className="text-sm text-gray-500">
+                {format(parseISO(post.date), "MMMM d, yyyy")}
+                </time>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                    post.source === 'bot' 
+                    ? 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
+                    : 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+                }`}>
+                    {post.source === 'bot' ? '🤖 Bot' : '👤 Human'}
+                </span>
+            </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
-          {docs.map((doc: any) => (
-             <Link 
-              key={doc.slug}
-              href={`/internal/${doc.slug}`} 
-              className="group p-6 bg-card border border-white/10 rounded-xl hover:border-secondary/50 transition-all"
-            >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 bg-white/5 rounded-lg group-hover:bg-secondary/20 transition-colors">
-                    <FileText className="w-6 h-6 text-gray-400 group-hover:text-secondary" />
-                  </div>
-                  <span className="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">
-                    CONFIDENTIAL
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-secondary transition-colors">
-                  {doc.title || doc.slug}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  {doc.description || "No description provided."}
-                </p>
-             </Link>
-          ))}
-        </div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+              <Link href={`/internal/blog/${post.slug}`} className="hover:underline focus:outline-none">
+                <span className="absolute inset-0" aria-hidden="true" />
+                {post.title}
+              </Link>
+            </h2>
+            
+            <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
+              {post.summary}
+            </p>
+            
+            <div className="flex flex-wrap gap-2 pt-2">
+                {post.tags?.map(tag => (
+                    <span key={tag} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                        #{tag}
+                    </span>
+                ))}
+            </div>
+          </article>
+        ))}
+        {posts.length === 0 && (
+            <div className="text-center py-12">
+                <p className="text-gray-500">No internal posts found.</p>
+            </div>
+        )}
       </div>
-    </AuthGuard>
+    </div>
   );
 }
