@@ -1,8 +1,9 @@
-import { getPostBySlug, getAllPosts } from '@/lib/mdx';
+import { allInternalDocs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Lock } from 'lucide-react';
 import AuthGuard from '@/components/auth/AuthGuard';
+import { Mdx } from '@/components/mdx-components';
 
 export const runtime = 'edge';
 
@@ -16,7 +17,7 @@ interface PageProps {
 
 export default async function InternalPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug, 'internal');
+  const post = allInternalDocs.find((doc) => doc.slug === slug);
 
   if (!post) {
     notFound();
@@ -36,17 +37,17 @@ export default async function InternalPage({ params }: PageProps) {
              </div>
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            {post.meta.title}
+            {post.title}
           </h1>
           <div className="flex gap-4 text-sm text-gray-500">
-             <time>{new Date(post.meta.date || Date.now()).toLocaleDateString()}</time>
+             <time>{post.date ? new Date(post.date).toLocaleDateString() : 'No Date'}</time>
              <span>•</span>
              <span>Internal Doc</span>
           </div>
         </header>
 
         <div className="prose prose-invert prose-lg max-w-none">
-          {post.content}
+          <Mdx code={post.body.code} />
         </div>
       </article>
     </AuthGuard>

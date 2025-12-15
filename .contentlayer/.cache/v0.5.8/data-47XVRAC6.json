@@ -1,0 +1,53 @@
+{
+  "cacheItemsMap": {
+    "content/private/docs/contributing.mdx": {
+      "document": {
+        "title": "Contribution Guide",
+        "date": "2024-01-01T00:00:00.000Z",
+        "authors": [
+          "Team"
+        ],
+        "body": {
+          "raw": "\r\n# 投稿与贡献指南\r\n\r\n我们鼓励所有成员参与到 **知库 (Knowledge Base)** 的建设中来！无论是一次技术分享的 PPT，还是一篇踩坑笔记，都值得被记录。\r\n\r\n## 如何发布内容？\r\n\r\n### 方式一：GitHub Pull Request (推荐)\r\n\r\n1.  **Fork** 本仓库到你的账号。\r\n2.  在 `docs/` (文档) 或 `blog/` (博客) 下创建新的 Markdown 文件。\r\n3.  提交 **Pull Request**，管理员 Review 后即可上线。\r\n",
+          "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),b=(e,n)=>{for(var o in n)i(e,o,{get:n[o],enumerable:!0})},c=(e,n,o,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of m(n))!p.call(e,r)&&r!==o&&i(e,r,{get:()=>n[r],enumerable:!(l=g(n,r))||l.enumerable});return e};var w=(e,n,o)=>(o=e!=null?u(x(e)):{},c(n||!e||!e.__esModule?i(o,\"default\",{value:e,enumerable:!0}):o,e)),f=e=>c(i({},\"__esModule\",{value:!0}),e);var s=_((k,d)=>{d.exports=_jsx_runtime});var M={};b(M,{default:()=>a,frontmatter:()=>j});var t=w(s()),j={title:\"Contribution Guide\",date:\"2024-01-01\",description:\"How to contribute to the knowledge base.\",authors:[\"Team\"],sidebar_position:2};function h(e){let n={code:\"code\",h1:\"h1\",h2:\"h2\",h3:\"h3\",li:\"li\",ol:\"ol\",p:\"p\",strong:\"strong\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(n.h1,{children:\"\\u6295\\u7A3F\\u4E0E\\u8D21\\u732E\\u6307\\u5357\"}),`\n`,(0,t.jsxs)(n.p,{children:[\"\\u6211\\u4EEC\\u9F13\\u52B1\\u6240\\u6709\\u6210\\u5458\\u53C2\\u4E0E\\u5230 \",(0,t.jsx)(n.strong,{children:\"\\u77E5\\u5E93 (Knowledge Base)\"}),\" \\u7684\\u5EFA\\u8BBE\\u4E2D\\u6765\\uFF01\\u65E0\\u8BBA\\u662F\\u4E00\\u6B21\\u6280\\u672F\\u5206\\u4EAB\\u7684 PPT\\uFF0C\\u8FD8\\u662F\\u4E00\\u7BC7\\u8E29\\u5751\\u7B14\\u8BB0\\uFF0C\\u90FD\\u503C\\u5F97\\u88AB\\u8BB0\\u5F55\\u3002\"]}),`\n`,(0,t.jsx)(n.h2,{children:\"\\u5982\\u4F55\\u53D1\\u5E03\\u5185\\u5BB9\\uFF1F\"}),`\n`,(0,t.jsx)(n.h3,{children:\"\\u65B9\\u5F0F\\u4E00\\uFF1AGitHub Pull Request (\\u63A8\\u8350)\"}),`\n`,(0,t.jsxs)(n.ol,{children:[`\n`,(0,t.jsxs)(n.li,{children:[(0,t.jsx)(n.strong,{children:\"Fork\"}),\" \\u672C\\u4ED3\\u5E93\\u5230\\u4F60\\u7684\\u8D26\\u53F7\\u3002\"]}),`\n`,(0,t.jsxs)(n.li,{children:[\"\\u5728 \",(0,t.jsx)(n.code,{children:\"docs/\"}),\" (\\u6587\\u6863) \\u6216 \",(0,t.jsx)(n.code,{children:\"blog/\"}),\" (\\u535A\\u5BA2) \\u4E0B\\u521B\\u5EFA\\u65B0\\u7684 Markdown \\u6587\\u4EF6\\u3002\"]}),`\n`,(0,t.jsxs)(n.li,{children:[\"\\u63D0\\u4EA4 \",(0,t.jsx)(n.strong,{children:\"Pull Request\"}),\"\\uFF0C\\u7BA1\\u7406\\u5458 Review \\u540E\\u5373\\u53EF\\u4E0A\\u7EBF\\u3002\"]}),`\n`]})]})}function a(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return f(M);})();\n;return Component;"
+        },
+        "_id": "content/private/docs/contributing.mdx",
+        "_raw": {
+          "sourceFilePath": "content/private/docs/contributing.mdx",
+          "sourceFileName": "contributing.mdx",
+          "sourceFileDir": "content/private/docs",
+          "contentType": "mdx",
+          "flattenedPath": "content/private/docs/contributing"
+        },
+        "type": "InternalDoc",
+        "slug": "contributing"
+      },
+      "documentHash": "1765711118704",
+      "hasWarnings": true,
+      "documentTypeName": "InternalDoc"
+    },
+    "content/private/docs/intro.mdx": {
+      "document": {
+        "title": "Introduction",
+        "date": "2024-01-01T00:00:00.000Z",
+        "body": {
+          "raw": "\r\n# 欢迎来到内部知识库\r\n\r\n这里是 Swift Coding Club 的核心资产沉淀地。\r\n只有经过验证的成员才能访问此区域。\r\n\r\n请遵守保密协议，不要随意对外分享内部文档。\r\n",
+          "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,_=Object.prototype.hasOwnProperty;var f=(n,t)=>()=>(t||n((t={exports:{}}).exports,t),t.exports),C=(n,t)=>{for(var o in t)i(n,o,{get:t[o],enumerable:!0})},s=(n,t,o,c)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let r of p(t))!_.call(n,r)&&r!==o&&i(n,r,{get:()=>t[r],enumerable:!(c=h(t,r))||c.enumerable});return n};var j=(n,t,o)=>(o=n!=null?u(x(n)):{},s(t||!n||!n.__esModule?i(o,\"default\",{value:n,enumerable:!0}):o,n)),g=n=>s(i({},\"__esModule\",{value:!0}),n);var a=f((D,d)=>{d.exports=_jsx_runtime});var w={};C(w,{default:()=>m,frontmatter:()=>b});var e=j(a()),b={title:\"Introduction\",date:\"2024-01-01\",description:\"Welcome to the Swift Coding Club internal docs.\",sidebar_position:1};function l(n){let t={h1:\"h1\",p:\"p\",...n.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(t.h1,{children:\"\\u6B22\\u8FCE\\u6765\\u5230\\u5185\\u90E8\\u77E5\\u8BC6\\u5E93\"}),`\n`,(0,e.jsx)(t.p,{children:`\\u8FD9\\u91CC\\u662F Swift Coding Club \\u7684\\u6838\\u5FC3\\u8D44\\u4EA7\\u6C89\\u6DC0\\u5730\\u3002\\r\n\\u53EA\\u6709\\u7ECF\\u8FC7\\u9A8C\\u8BC1\\u7684\\u6210\\u5458\\u624D\\u80FD\\u8BBF\\u95EE\\u6B64\\u533A\\u57DF\\u3002`}),`\n`,(0,e.jsx)(t.p,{children:\"\\u8BF7\\u9075\\u5B88\\u4FDD\\u5BC6\\u534F\\u8BAE\\uFF0C\\u4E0D\\u8981\\u968F\\u610F\\u5BF9\\u5916\\u5206\\u4EAB\\u5185\\u90E8\\u6587\\u6863\\u3002\"})]})}function m(n={}){let{wrapper:t}=n.components||{};return t?(0,e.jsx)(t,{...n,children:(0,e.jsx)(l,{...n})}):l(n)}return g(w);})();\n;return Component;"
+        },
+        "_id": "content/private/docs/intro.mdx",
+        "_raw": {
+          "sourceFilePath": "content/private/docs/intro.mdx",
+          "sourceFileName": "intro.mdx",
+          "sourceFileDir": "content/private/docs",
+          "contentType": "mdx",
+          "flattenedPath": "content/private/docs/intro"
+        },
+        "type": "InternalDoc",
+        "slug": "intro"
+      },
+      "documentHash": "1765711122272",
+      "hasWarnings": true,
+      "documentTypeName": "InternalDoc"
+    }
+  }
+}

@@ -1,8 +1,8 @@
+// contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
 import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism-plus";
-
-export const InternalDoc = defineDocumentType(() => ({
+var InternalDoc = defineDocumentType(() => ({
   name: "InternalDoc",
   filePathPattern: "content/private/docs/**/*.mdx",
   contentType: "mdx",
@@ -11,20 +11,19 @@ export const InternalDoc = defineDocumentType(() => ({
     date: { type: "date", required: false },
     authors: { type: "list", of: { type: "string" } },
     draft: { type: "boolean" },
-    summary: { type: "string" },
+    summary: { type: "string" }
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.flattenedPath.replace(/^content\/private\/docs\//, ""),
-    },
-  },
+      resolve: (doc) => doc._raw.flattenedPath.replace(/^content\/private\/docs\//, "")
+    }
+  }
 }));
-
-// Update Blog path pattern since root is changing
-export const Blog = defineDocumentType(() => ({
+var Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: "data/blog/**/*.mdx", // Changed from blog/**/*.mdx
+  filePathPattern: "data/blog/**/*.mdx",
+  // Changed from blog/**/*.mdx
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
@@ -33,20 +32,26 @@ export const Blog = defineDocumentType(() => ({
     draft: { type: "boolean" },
     summary: { type: "string" },
     authors: { type: "list", of: { type: "string" } },
-    source: { type: "enum", options: ["human", "bot"], default: "human" },
+    source: { type: "enum", options: ["human", "bot"], default: "human" }
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.flattenedPath.replace(/^data\/blog\//, ""),
-    },
-  },
+      resolve: (doc) => doc._raw.flattenedPath.replace(/^data\/blog\//, "")
+    }
+  }
 }));
-
-export default makeSource({
-  contentDirPath: ".", // Changed from "data" to root to access both paths
+var contentlayer_config_default = makeSource({
+  contentDirPath: ".",
+  // Changed from "data" to root to access both paths
   documentTypes: [Blog, InternalDoc],
   mdx: {
-    rehypePlugins: [rehypeKatex, rehypePrism],
-  },
+    rehypePlugins: [rehypeKatex, rehypePrism]
+  }
 });
+export {
+  Blog,
+  InternalDoc,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-47XVRAC6.mjs.map
