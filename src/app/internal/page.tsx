@@ -3,6 +3,8 @@ import { compareDesc, format, parseISO } from "date-fns";
 import Link from "next/link";
 import { Key } from "lucide-react"; // Import icon if needed, but keeping it simple for now
 
+export const runtime = 'edge';
+
 export const metadata = {
   title: "Internal Dashboard | Swift Coding Club",
 };

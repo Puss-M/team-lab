@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { ArrowLeft, Lock } from 'lucide-react';
 import AuthGuard from '@/components/auth/AuthGuard';
 
+export const runtime = 'edge';
+
 export async function generateStaticParams() {
   const posts = await getAllPosts('internal');
   return posts.map((post) => ({

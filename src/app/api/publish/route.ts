@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { Octokit } from "@octokit/rest";
 import { format } from "date-fns";
 
+export const runtime = 'edge';
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Auth Guard

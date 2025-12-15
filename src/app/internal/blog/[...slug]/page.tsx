@@ -3,6 +3,8 @@ import { Mdx } from '@/components/mdx-components'
 import { format, parseISO } from 'date-fns'
 import { notFound } from 'next/navigation'
 
+export const runtime = 'edge';
+
 export const generateStaticParams = async () =>
   allBlogs.map((post) => ({ slug: post.slug.split('/') }))
 
