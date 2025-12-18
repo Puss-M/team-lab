@@ -1,0 +1,407 @@
+---
+title: "新成员入职指南"
+date: "2024-12-15"
+description: "欢迎加入 Swift Coding Club！这份指南将帮助你快速融入团队，开启你的成长之旅。"
+---
+
+# 新成员入职指南 🎉
+
+恭喜你成为 **Swift Coding Club** 的一员！这份指南将帮助你快速了解社团，融入团队，开启你的技术之旅。
+
+## ✅ 入职清单
+
+### 第一周
+
+- [ ] **完成账号设置**
+
+  - GitHub 账号加入 Organization
+  - Slack/微信群组
+  - 内部知识库访问权限
+  - Google Drive 共享文件夹
+
+- [ ] **了解团队**
+
+  - 阅读社团简介（本文档）
+  - 了解组织架构
+  - 认识导师（Mentor）
+
+- [ ] **环境配置**
+  - 安装 Git 并配置 SSH Key
+  - 安装 Python 3.11+
+  - 安装 VS Code 及插件
+  - （可选）配置 Docker
+
+### 第二周
+
+- [ ] **技术学习**
+
+  - 完成 Git 基础教程
+  - 学习 Python 基础（如已掌握可跳过）
+  - 阅读项目代码规范
+
+- [ ] **项目参与**
+  - 选择感兴趣的项目组
+  - 领取第一个 Issue（标记为 good-first-issue）
+  - 提交第一个 Pull Request
+
+### 第三周
+
+- [ ] **社交融入**
+
+  - 参加技术分享会
+  - 参加 Journal Club（如有）
+  - 认识更多小伙伴
+
+- [ ] **技能提升**
+  - 根据兴趣方向，制定学习计划
+  - 与导师讨论职业规划
+
+## 👥 认识你的导师
+
+每位新成员都会分配一位导师（Mentor），ta 将：
+
+- 📚 **指导学习**：推荐学习资源，解答技术问题
+- 🚀 **项目引导**：帮助你选择合适的项目任务
+- 💬 **定期沟通**：每周至少一次 1-on-1 交流
+- 🎯 **职业建议**：分享实习、求职经验
+
+### 如何与导师沟通
+
+1. **提前预约**：通过 Slack/微信约定时间
+2. **准备问题**：列出想讨论的问题清单
+3. **主动分享**：告诉导师你的进展和困惑
+4. **尊重时间**：控制在 30-60 分钟内
+
+## 🛠️ 开发环境配置
+
+### 1. Git 配置
+
+```bash
+# 配置用户信息
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# 生成 SSH Key
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+# 添加 SSH Key 到 GitHub
+cat ~/.ssh/id_ed25519.pub
+# 复制内容，到 GitHub Settings > SSH Keys 添加
+```
+
+### 2. Python 环境
+
+我们推荐使用 **pyenv** 管理 Python 版本：
+
+```bash
+# Windows (使用 pyenv-win)
+pip install pyenv-win --target %USERPROFILE%\.pyenv
+
+# macOS/Linux
+curl https://pyenv.run | bash
+
+# 安装 Python 3.11
+pyenv install 3.11.7
+pyenv global 3.11.7
+
+# 验证
+python --version
+```
+
+### 3. VS Code 插件
+
+必装插件：
+
+- **Python** (Microsoft)
+- **Pylance** (Microsoft)
+- **ESLint** (前端必须)
+- **GitLens**
+- **Prettier**
+- **Remote - SSH** (远程开发)
+
+推荐插件：
+
+- **Jupyter**
+- **Docker**
+- **Thunder Client** (API 测试)
+
+### 4. 项目环境
+
+克隆项目并安装依赖：
+
+```bash
+# 克隆仓库
+git clone git@github.com:swift-coding-club/alpha-platform.git
+cd alpha-platform
+
+# 创建虚拟环境
+python -m venv venv
+
+# 激活虚拟环境
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 运行项目
+python main.py
+```
+
+## 📚 学习资源
+
+### 技术基础
+
+**Git & GitHub**
+
+- [Pro Git Book](https://git-scm.com/book/zh/v2)（中文版）
+- [GitHub Learning Lab](https://lab.github.com/)
+
+**Python**
+
+- [Python 官方教程](https://docs.python.org/zh-cn/3/tutorial/)
+- 《流畅的 Python》（书籍）
+- [Real Python](https://realpython.com/)（英文）
+
+**前端**
+
+- [React 官方文档](https://react.dev/)
+- [Next.js Learn](https://nextjs.org/learn)
+- [JavaScript.info](https://javascript.info/)
+
+### 金融&量化
+
+**入门书籍**
+
+- 《Python 金融大数据分析》- Yves Hilpisch
+- 《量化投资：以 Python 为工具》- 蔡立耑
+
+**在线课程**
+
+- Coursera: Machine Learning for Trading
+- Udacity: AI for Trading Nanodegree
+
+**论文**
+
+- 内部论文阅读列表（见 `/internal/docs/paper-reading`）
+
+## 🎯 项目选择指南
+
+根据你的兴趣和技能，选择合适的项目组：
+
+### Frontend 前端组
+
+**适合人群**：
+
+- 对 UI/UX 感兴趣
+- 想学习现代前端技术
+- 希望做出可视化产品
+
+**技术栈**：React, Next.js, TypeScript, TailwindCSS
+
+**项目示例**：
+
+- Alpha 平台 Dashboard
+- 社团官网维护
+- 数据可视化工具
+
+### Backend 后端组
+
+**适合人群**：
+
+- 喜欢系统设计和架构
+- 对数据库、API 感兴趣
+- 追求性能和稳定性
+
+**技术栈**：FastAPI, PostgreSQL, Redis, Docker
+
+**项目示例**：
+
+- Alpha 平台 API
+- 实时数据推送系统
+- 微服务改造
+
+### Algorithm 算法组
+
+**适合人群**：
+
+- 数学/统计基础好
+- 对量化策略感兴趣
+- 想从事量化研究
+
+**技术栈**：Python, NumPy, Pandas, PyTorch
+
+**项目示例**：
+
+- 因子挖掘研究
+- 机器学习策略
+- Alpha 策略回测
+
+## 📅 社团活动
+
+### 技术分享会（每周三 19:00）
+
+**形式**：
+
+- 30 分钟技术分享
+- 20 分钟 Q&A
+- 10 分钟自由讨论
+
+**主题示例**：
+
+- "FastAPI 实战技巧"
+- "量化策略评估方法"
+- "从零搭建交易系统"
+
+### Journal Club（双周日 14:00）
+
+阅读和讨论前沿论文：
+
+**流程**：
+
+1. 提前一周确定论文
+2. 成员自行阅读
+3. 周日集中讨论
+4. 撰写阅读笔记
+
+### Project Demo Day（每月最后一周）
+
+展示项目成果：
+
+- 各项目组 10 分钟展示
+- 演示功能、讲解技术
+- 互相反馈和建议
+
+### 团建活动（不定期）
+
+- 线下聚餐
+- 户外活动
+- 新年晚会
+- Hackathon
+
+## 🤝 沟通协作
+
+### 日常沟通工具
+
+**即时通讯**：
+
+- 微信群：日常闲聊、快速问题
+- Slack：工作讨论、文件分享
+
+**项目管理**：
+
+- GitHub Issues：任务跟踪
+- GitHub Projects：看板管理
+
+**文档协作**：
+
+- Notion：会议记录、头脑风暴
+- Google Docs：文档共享
+
+### 沟通礼仪
+
+✅ **应该做**：
+
+- 提问前先搜索，避免重复问题
+- 描述问题时附上错误信息、截图
+- 及时回复他人的消息
+- 感谢帮助过你的人
+
+❌ **不应该做**：
+
+- 不要在群里发"在吗"就不说事
+- 不要截图代码，而是使用代码块
+- 不要深夜发工作消息（除非紧急）
+
+## 🎓 成长路径
+
+### 见习成员（0-3 个月）
+
+**目标**：
+
+- 熟悉框架和流程
+- 完成基础任务
+- 建立社交网络
+
+**考核标准**：
+
+- 提交至少 5 个 PR
+- 参与至少 3 次技术分享
+- 完成一个小功能开发
+
+### 正式成员（3-12 个月）
+
+**目标**：
+
+- 独立负责模块开发
+- 技术能力显著提升
+- 参与技术分享
+
+**晋升标准**：
+
+- 导师推荐
+- 项目贡献度评估
+- 团队协作评价
+
+### 核心成员（12 个月+）
+
+**目标**：
+
+- 带领新成员
+- 主导项目开发
+- 对外代表社团
+
+**职责**：
+
+- 指导新成员
+- Code Review
+- 技术决策参与
+
+## 💡 常见问题 FAQ
+
+### Q: 我完全是新手，能跟上吗？
+
+**A**: 完全可以！我们有完善的新人培养体系，导师会根据你的节奏指导学习。很多优秀成员都是零基础加入的。
+
+### Q: 需要投入多少时间？
+
+**A**: 平均每周 5-10 小时。包括：
+
+- 项目开发：3-5 小时
+- 学习时间：2-3 小时
+- 活动参与：1-2 小时
+
+学期忙的话可以适当减少，关键是保持连续性。
+
+### Q: 中途可以换项目组吗？
+
+**A**: 当然可以！建议先在一个组深入学习 1-2 个月，再考虑转组。跨组合作也很欢迎。
+
+### Q: 如何获得实习/工作推荐？
+
+**A**: 在社团有突出贡献的成员，我们会优先推荐给合作企业。往届成员已有多人通过社团获得头部券商、量化私募的 offer。
+
+### Q: 毕业后还能参与吗？
+
+**A**: 欢迎往届成员持续参与！可以：
+
+- 远程贡献代码
+- 回来做技术分享
+- 提供职业指导
+- 参与校友网络
+
+## 📞 需要帮助？
+
+遇到任何问题，随时联系：
+
+- 🙋 **你的导师**：一对一指导
+- 💬 **技术群**：技术问题讨论
+- 📧 **管理团队**：club@gofintech.cn
+
+---
+
+**再次欢迎！期待与你一起成长！** 🚀
+
+_最后更新：2024-12-15_

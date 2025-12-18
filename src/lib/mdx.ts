@@ -20,7 +20,7 @@ export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'b
   }
   
   const realSlug = slug.replace(/\.mdx$/, '');
-  const dir = type === 'blog' ? 'content/public/blog' : 'content/private/docs';
+  const dir = type === 'blog' ? 'data/blog' : 'content/private/docs';
   const filePath = path.join(rootDir, dir, `${realSlug}.mdx`);
   
   console.log(`[MDX] Processing: ${realSlug} (${filePath})`);
@@ -61,7 +61,7 @@ export async function getPostBySlug(slug: string, type: 'blog' | 'internal' = 'b
 }
 
 export async function getAllPosts(type: 'blog' | 'internal' = 'blog') {
-  const dir = type === 'blog' ? 'content/public/blog' : 'content/private/docs';
+  const dir = type === 'blog' ? 'data/blog' : 'content/private/docs';
   const postsDir = path.join(rootDir, dir);
   
   if (!fs.existsSync(postsDir)) return [];
