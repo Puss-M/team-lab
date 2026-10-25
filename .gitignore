@@ -42,3 +42,7 @@ next-env.d.ts
 
 # archive
 /legacy_archive
+
+
+# Contentlayer
+.contentlayer
