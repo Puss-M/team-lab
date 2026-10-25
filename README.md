@@ -1,5 +1,8 @@
 # Swift Coding Club 🚀
 
+[![CI](https://github.com/Puss-M/team-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/Puss-M/team-lab/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **Where Finance Meets Intelligence**  
 The AI & Quant Trading Community at SWUFE. Igniting Ideas, Fostering Collaboration.
 
